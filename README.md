@@ -34,11 +34,11 @@ data/
 
 | Class       | Precision | Recall | F1-score | Support |
 |------------|-----------|--------|----------|--------|
-| NORMAL     | 0.89      | 0.80   | 0.84     | 234    |
-| PNEUMONIA  | 0.89      | 0.94   | 0.91     | 390    |
+| NORMAL     | 0.91      | 0.78   | 0.84     | 234    |
+| PNEUMONIA  | 0.88      | 0.96   | 0.92     | 390    |
 
 - **Accuracy:** 0.89  
-- **Weighted F1-score:** 0.89
+- **Weighted F1-score:** 0.88
 
 # Results
 -The model achieves 89% accuracy on the test set.
