@@ -1,53 +1,55 @@
-## Disease Detection from Chest X-Ray
- ## 🧠Project Goal
+# Chest_Xray_Disease_detection
 
-The goal of this project is to build a deep learning model that can classify chest X-ray images as either Normal or Pneumonia. This demonstrates how AI can assist medical professionals in early diagnosis and improve healthcare outcomes.
 
-## 📦 Dataset
+A deep learning project to classify chest X-ray images as Normal or Pneumonia.
 
-Dataset Name: Chest X-Ray Images (Pneumonia)
-Source: Kaggle
+# Project Overview
 
-Total images: 5,863
+This project applies Convolutional Neural Networks (CNNs) to detect pneumonia from chest X-ray images. The model is trained on labeled radiographic data to support automated and accurate pneumonia detection.
 
-Split across training, validation, and test folders
 
-Two classes:
 
-**NORMAL**
+# Dataset
+- **Source:** [Chest X-Ray Images (Pneumonia) – Kaggle](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)
 
-**PNEUMONIA**
+# Dataset Structure
 
-**Note:** The dataset is imbalanced, with more pneumonia images than normal images.
+```text
+data/
+└── chest_xray/
+    ├── train/
+    │   ├── NORMAL/
+    │   └── PNEUMONIA/
+    ├── val/
+    │   ├── NORMAL/
+    │   └── PNEUMONIA/
+    └── test/
+        ├── NORMAL/
+        └── PNEUMONIA/
+``` 
 
-## 🛠️ Project Steps
-**1. Data Exploration**
 
-Visualize sample X-ray images to understand the data
 
-Analyze class distribution to identify imbalances
+# Model Performance
 
-**2. Data Preprocessing**
+| Class       | Precision | Recall | F1-score | Support |
+|------------|-----------|--------|----------|--------|
+| NORMAL     | 0.89      | 0.80   | 0.84     | 234    |
+| PNEUMONIA  | 0.89      | 0.94   | 0.91     | 390    |
 
-1-Resize images (e.g., 150x150 or 224x224)
-2-Normalize pixel values for better model performance
-3-Apply data augmentation (rotation, flipping, zooming) to:
-4-Reduce overfitting
-5-Balance the dataset
+- **Accuracy:** 0.89  
+- **Weighted F1-score:** 0.89
 
-**3. Model Building**
+# Results
+-The model achieves 89% accuracy on the test set.
+-High recall for PNEUMONIA ensures fewer missed cases.
+-Balanced precision across both classes indicates reliable predictions.
 
-1-Start with a basic Convolutional Neural Network (CNN)
-2-Conv2D → MaxPooling → Flatten → Dense layers
-3-Compile model using appropriate loss function and optimizer
 
-**4. Model Evaluation**
-Evaluate using metrics:
-1-Accuracy
-2-Precision
-3-Recall
-4-F1-score
+# Next Steps / Future Improvements
 
-Plot confusion matrix to visualize classification performance
-
-Visualize training vs validation accuracy and loss curves
+- Experiment with data augmentation techniques to improve model generalization and robustness.  
+- Evaluate advanced CNN architectures such as ResNet and EfficientNet to enhance performance.  
+- Deploy the trained model as a web or mobile application for real-world usage.  
+- Extend the system to multi-class classification to detect additional lung diseases.  
+- Integrate Explainable AI (XAI) methods (e.g., Grad-CAM) to visualize and interpret model predictions.
